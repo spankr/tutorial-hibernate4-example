@@ -27,6 +27,11 @@ public class PartDao {
     @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 
+    /**
+     * Get a part by its ID
+     * @param id
+     * @return 
+     */
     public Part get(final long id) {
         logger.debug("Retrieving part {}", id);
 
@@ -35,5 +40,17 @@ public class PartDao {
 
         // Retrieve existing person first
         return (Part) session.get(Part.class, id);
+    }
+
+    /**
+     * Persist a part
+     * @param p part to persist
+     */
+    public void upsert(Part p) {
+        if (p != null) {
+            logger.debug("upserting a part {}", p.getMfgNumber());
+            Session session = sessionFactory.getCurrentSession();
+            session.saveOrUpdate(p);
+        }
     }
 }

@@ -27,8 +27,6 @@ th {
         <dd>${supplier.id}</dd>
         <dt>NAME</dt>
         <dd>${supplier.name}</dd>
-        <dt>PARENT ID</dt>
-        <dd>${supplier.parentId}</dd>
     </dl>
 
     <h3>Parts Listing</h3>

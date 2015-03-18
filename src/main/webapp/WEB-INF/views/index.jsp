@@ -14,7 +14,7 @@
         To see all <a href='<c:url value="/suppliers"/>'>suppliers</a>.
     </p>
     <p>
-        To see vendor <a href='<c:url value="/supplier/10"/>'>10</a>.
+        To see supplier <a href='<c:url value="/supplier/2"/>'>2</a>.
     </p>
 </body>
 </html>

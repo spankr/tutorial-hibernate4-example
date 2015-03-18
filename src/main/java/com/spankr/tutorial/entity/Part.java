@@ -6,6 +6,7 @@ package com.spankr.tutorial.entity;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -20,13 +21,14 @@ import javax.persistence.Table;
 public class Part implements Serializable {
 
     @Id
+    @GeneratedValue
     @Column(name = "PartId", unique = true, nullable = false)
     private long id;
 
     @Column(name = "PartNumber")
     private String name;
 
-    @Column(name = "ManufacturerPartNumber")
+    @Column(name = "ManufacturerPartNumber", unique=true)
     private String mfgNumber;
 
     @Column(name = "RohsCode")

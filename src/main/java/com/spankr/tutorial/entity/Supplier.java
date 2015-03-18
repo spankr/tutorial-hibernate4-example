@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -22,10 +23,11 @@ import javax.persistence.Table;
 public class Supplier implements Serializable {
 
     @Id
+    @GeneratedValue
     @Column(name = "MfgId", unique = true, nullable = false)
     private long id;
 
-    @Column(name = "MfgName")
+    @Column(name = "MfgName", unique=true)
     private String name;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "supplier")
